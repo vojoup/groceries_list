@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!-- ng-cloak - {{}} does not show for a short time while loading-->
+<html ng-app="app3" ng-cloak>
+    <head>
+        <meta charset="utf-8">
+        <title>Angular.js tutorial</title>
+        <!-- Load angular.js-->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+        <script src="./js/example3.js"></script>
+        <link rel="stylesheet" href="./css/style.css">
+    </head>
+    <body>
+
+        <div id="groceruList" ng-controller="gListCtrl">
+            <h1 class="ListTitle"><span class="red">{{updateGrocCnt()}}</span> Groceries to get</h1>
+            <ol>
+                <li ng-repeat = "grocery in groceries">
+                    <span ng-class = "getClass($index)">{{grocery.item}}</span>, {{grocery.count}} {{grocery.metric}}
+                    <input type="checkbox" ng-model="grocery.purchased" />
+                </li>
+            </ol>
+            <!-- TODO: Input field for new items -->
+            <h1 class="praise">{{praise()}}</h1>
+        </div>
+
+    </body>
+</html>

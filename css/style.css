@@ -1,0 +1,25 @@
+h1 {
+    text-align: center;
+}
+ol {
+    text-align: center;
+}
+li {
+    font-size: 1.2em;
+    text-align: center;
+    list-style-type: none;
+}
+.red{
+    font-size: 1.5em;
+    font-weight: bold;
+    color: purple;
+}
+.blue{
+    color: blue;
+}
+h1.praise{
+    font-size: 5em;
+}
+body{
+    background-color: gray;
+}
