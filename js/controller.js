@@ -15,14 +15,27 @@ app3.controller('gListCtrl', function($scope) {
             }
         }
         return $scope.toBuy.length;
-    }
+    };
     $scope.praise = function() {
         if ($scope.toBuy.length === 0) {
             return "Well done!";
         }
-    }
+    };
     // console.log($scope.toBuy);
     $scope.getClass = function(index) {
         return $scope.groceries[index].purchased ? "blue" : "red";
-    }
+    };
+    $scope.addNewItem = function(newItemName,newItemCount, newItemMetric ) {
+        console.log("Adding " + newItemName);
+        if (!(newItemName === undefined || newItemName === "")) {
+            $scope.groceries.push({
+                item: newItemName, purchased: false, count: newItemCount, metric: newItemMetric
+            });
+            $scope.missingNewItemError = "";
+            console.log(newItemName + " added to groceries list.");
+        } else {
+            $scope.missingNewItemError = "Enter an item.";
+            console.log("Enter an item.");
+        }
+    };
 });
