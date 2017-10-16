@@ -10,9 +10,9 @@
         <link rel="stylesheet" href="./css/style.css">
     </head>
     <body>
-
         <div id="groceruList" ng-controller="gListCtrl">
             <h1 class="ListTitle"><span class="red">{{updateGrocCnt()}}</span> Groceries to get</h1>
+            <!-- TODO: Add an option to add new items -->
             <ol>
                 <li ng-repeat = "grocery in groceries">
                     <span ng-class = "getClass($index)">{{grocery.item}}</span>, {{grocery.count}} {{grocery.metric}}
@@ -21,7 +21,13 @@
             </ol>
             <!-- TODO: Input field for new items -->
             <h1 class="praise">{{praise()}}</h1>
+            <label>New item: <input type="text" ng-model="newItemName"/></label>
+            <label>count: <input type="text" ng-model="newItemCount"/></label>
+            <label>Metric: <input type="text" ng-model="newItemMetric"/></label>
+            <button type="button" ng-click="addNewItem(newItemName, newItemCount, newItemMetric)">Add Item</button>
         </div>
+        <!-- {{newItem}} -->
+        <h1>{{missingNewItemError}}</h1>
 
     </body>
 </html>
