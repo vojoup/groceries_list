@@ -25,7 +25,7 @@ app3.controller('gListCtrl', function($scope) {
     $scope.getClass = function(index) {
         return $scope.groceries[index].purchased ? "blue" : "red";
     };
-    $scope.addNewItem = function(newItemName,newItemCount, newItemMetric ) {
+    $scope.addNewItem = function(newItemName, newItemCount, newItemMetric ) {
         console.log("Adding " + newItemName);
         if (!(newItemName === undefined || newItemName === "")) {
             $scope.groceries.push({

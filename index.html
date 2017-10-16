@@ -10,24 +10,26 @@
         <link rel="stylesheet" href="./css/style.css">
     </head>
     <body>
-        <div id="groceruList" ng-controller="gListCtrl">
+        <div id="groceryList" ng-controller="gListCtrl">
+            <!-- Numer of unpurchased items in title -->
             <h1 class="ListTitle"><span class="red">{{updateGrocCnt()}}</span> Groceries to get</h1>
-            <!-- TODO: Add an option to add new items -->
             <ol>
+                <!-- Dynamicaly loop through all items in list -->
                 <li ng-repeat = "grocery in groceries">
+                    <!-- Change the color if item name based on wheter it is already bought -->
                     <span ng-class = "getClass($index)">{{grocery.item}}</span>, {{grocery.count}} {{grocery.metric}}
                     <input type="checkbox" ng-model="grocery.purchased" />
                 </li>
             </ol>
-            <!-- TODO: Input field for new items -->
             <h1 class="praise">{{praise()}}</h1>
+            <!-- Place for user input for new items -->
             <label>New item: <input type="text" ng-model="newItemName"/></label>
             <label>count: <input type="text" ng-model="newItemCount"/></label>
             <label>Metric: <input type="text" ng-model="newItemMetric"/></label>
+            <!-- Button to submit new item -->
             <button type="button" ng-click="addNewItem(newItemName, newItemCount, newItemMetric)">Add Item</button>
+            <!-- Error message when submitting empty item -->
+            <h1> {{missingNewItemError}} </h1>
         </div>
-        <!-- {{newItem}} -->
-        <h1>{{missingNewItemError}}</h1>
-
     </body>
 </html>
