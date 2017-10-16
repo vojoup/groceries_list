@@ -4,8 +4,8 @@ app3.controller('gListCtrl', function($scope) {
     $scope.groceries = [
         {item: "Tomatoes", purchased: false, count: "12", metric: "pieces"},
         {item: "Potatoes", purchased: false, count: "1", metric: "kg"},
-        {item: "Ham", purchased: true, count: "2", metric: "packages"},
-        {item: "Eggs", purchased: true, count: "10", metric: "packages"}
+        {item: "Ham", purchased: false, count: "2", metric: "packages"},
+        {item: "Eggs", purchased: false, count: "10", metric: "packages"}
     ];
     $scope.updateGrocCnt = function(){
         $scope.toBuy = [];
